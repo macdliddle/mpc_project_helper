@@ -1,6 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css'
 import mpcData from 'mpc_api/data'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Modal from 'react-bootstrap/esm/Modal'
 import Tab from 'react-bootstrap/esm/Tab'
 import Tabs from 'react-bootstrap/esm/Tabs'
@@ -17,7 +17,10 @@ const App = () => {
     setShow(true)
   }
   const onHide = () => setShow(false)
-  chrome.runtime.onMessage.addListener(onShow)
+  useEffect(() => {
+    chrome.runtime.onMessage.addListener(onShow)
+    return () => chrome.runtime.onMessage.removeListener(onShow)
+  }, [])
 
   const [tab, setTab] = useTab()
   const onTabChange = () => setTab(undefined)

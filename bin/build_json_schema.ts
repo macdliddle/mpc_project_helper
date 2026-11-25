@@ -13,6 +13,7 @@ const settings: TJS.PartialArgs = {
 const compilerOptions: TJS.CompilerOptions = {
   alwaysStrict: true,
   strictNullChecks: true,
+  skipLibCheck: true,
 }
 
 const sortObjectKeys = (key: string, value: unknown) => {

@@ -1,4 +1,4 @@
-import { UploadedImage as Card, Settings } from 'mpc_api'
+import { UploadedImage as Card } from 'mpc_api'
 export type { UploadedImage as Card, CompressedImageData as CardFace } from 'mpc_api'
 
 export interface ProjectCard extends Card {
