@@ -6,6 +6,7 @@
   "license": "ISC",
   "scripts": {
     "dev": "vite",
+    "postinstall": "node bin/patch_mpc_api.mjs",
     "prebuild": "tsx bin/build_json_schema.ts validator \"src/types/projects/union.ts\" ProjectUnion \"src/types/projects/validate.js\" validate",
     "build": "vite build",
     "prebuild:firefox": "npm run prebuild",

@@ -15,6 +15,11 @@ npm run lint:firefox
 npm run package:firefox
 ```
 
+The install hook applies a small compatibility patch to the installed `mpc_api`
+bundles, binding `window.fetch` before it is passed to `fetch-retry`. This keeps
+uploads working in Firefox after dependency reinstalls and rebuilds, and uses
+the same correctly bound API in Chrome.
+
 The extension files are in `dist-firefox/`. `package:firefox` creates an
 unsigned ZIP in `web-ext-artifacts/` using Mozilla's `web-ext` tool. The ZIP
 contains the extension files at its root and is suitable for AMO submission.
