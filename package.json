@@ -1,7 +1,7 @@
 {
   "name": "mpc_project_helper",
   "private": true,
-  "version": "2.1.0",
+  "version": "2.1.1",
   "type": "module",
   "license": "ISC",
   "scripts": {
